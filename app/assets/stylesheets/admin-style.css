@@ -1,0 +1,163 @@
+.login-cont{
+    background: #051d79;
+    height: 100px;
+    position: relative;
+}
+.admin-logo{
+    float: left;
+    margin: 5px 5px 0 10px;
+}
+
+.login-form{
+    width:290px;
+    color:#fff;
+    padding-top:10px;
+    height: 100px;
+    font:12px arial;
+}
+.login-form input{
+    float:right;
+    border:1px solid #ccc;
+}
+.login-form input[type='text'], .login-form input[type='password'] {
+    padding:2px 3px;
+}
+.login-form label{
+    line-height: 25px;
+}
+
+.login-form input[type='submit'] {
+    background: #cf2f2c;
+    color:#FFF;
+    padding:2px 5px 3px 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border:1px solid #b92421;
+}
+.login-form input[type='submit']:hover{
+    background: #e73d3a;
+}
+.admin-nav{
+    position: absolute;
+    bottom: 0;
+    margin-left:140px;
+}
+.error{
+    font:12px arial;
+    color:red;
+    height: 20px;
+    display: block;
+}
+.admin-content{
+    width:800px;
+}
+.admin-news-list{
+    width:350px;
+    float: left;
+}
+.admin-news-list ul{
+    padding:0;
+    margin:0;
+}
+.admin-news-list ul li{
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.admin-news-list ul li a{
+    color:#000;
+    font:12px arial;
+    display: block;
+    text-decoration: none;
+    padding:5px 7px 7px 7px;
+}
+.admin-news-list ul li a:hover{
+    background: #f2f2f2;
+}
+.add-news-btn{
+    display: block;
+    font-family: myriad pro, arial;
+    font-size: 12px;
+    background: #07144B;
+    border-radius: 2px;
+    width:90px;
+    text-align: center;
+    color:#f0f0f0;
+    padding-top:4px;
+    padding-bottom:3px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left:20px;
+    margin-bottom: 5px;
+}
+
+.add-news-btn:hover {
+    background: #6FA8E2;
+}
+
+.admin-news-add{
+    margin-left:20px;
+    float:right;
+    text-align: right;
+
+}
+.admin-news-add input[type='text'], .admin-news-add textarea {
+    width:370px;
+    border:1px solid #ccc;
+    padding:5px 5px;
+    margin-bottom: 3px;
+}
+.admin-news-add textarea {
+    height: 150px;
+}
+.admin-news-add input[type='submit']{
+    display: block;
+    font-family: myriad pro, arial;
+    font-size: 12px;
+    background: #07144B;
+    border-radius: 2px;
+    width:90px;
+    text-align: center;
+    color:#f0f0f0;
+    padding-top:4px;
+    padding-bottom:3px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left:20px;
+    margin-bottom: 5px;
+    border:0;
+    float: right;
+}
+
+.admin-news-list ul li .delete-btn {
+    display: block;
+    font-family: myriad pro, arial;
+    font-size: 12px;
+    font-weight: bold;
+    background: #cf302d;
+    border-radius: 2px;
+    width:50px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    float: right;
+    position: absolute;
+    right: 0;
+    z-index: 20;
+    color:#FFF;
+    font:12px arial;
+    display: block;
+    text-decoration: none;
+    padding:3px 3px 3px 3px !important;
+    margin-top:-25px;
+    display: none;
+}
+
+.admin-news-list ul li .delete-btn:hover{
+    background: #07144B;
+}
+
+.admin-news-list ul li:hover a{
+    display: block;
+}

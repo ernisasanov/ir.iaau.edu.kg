@@ -1,0 +1,23 @@
+<div class="login-cont">
+  <%= link_to image_tag("logo.png", class: "admin-logo", alt: "Rails"), '/' %>
+
+  <%if (!loggen_in)%>
+      <%= form_tag("/admin/login", method: "post", class: "login-form") do %>
+          <%= label_tag(:q, "Login:") %>
+          <%= hidden_field_tag(:type, "login") %>
+          <%= text_field_tag(:username) %><br>
+          <%= label_tag(:q, "Pass:") %>
+          <%= password_field_tag(:password) %><br>
+          <%= submit_tag("sign in") %>
+      <% end %>
+  <% else %>
+      <div class="logout"></div>
+      <div class='nav admin-nav'>
+        <ul>
+          <li><%= link_to "News", "/admin/news" %></li>
+          <li><%= link_to "Profile", "/admin/profile" %></li>
+          <li><%= link_to "Logout", "/admin/logout" %></li>
+        </ul>
+      </div>
+  <% end %>
+</div>

@@ -1,0 +1,25 @@
+<div class='header-cont'>
+    <div class='header container'>
+        <div class='logo'>
+            <%= link_to image_tag("logo.png", class: "page-header", alt: "Rails"), '/' %>
+            <span>International Relations Department</span>
+        </div>
+        <div class='nav'>
+            <ul>
+                <li><%= link_to "Home", root_path, :class => is_current(root_path) %></li>
+                <li><%= link_to "About", about_path, :class => is_current(about_path) %></li>
+                <li><%= link_to "Faculty and Staff", faculty_path, :class => is_current(faculty_path) %></li>
+                <li class="has-child">
+                    <a href="#" class="<%= is_current(undergraduate_path) || is_current(graduate_path)%>">Courses</a>
+                    <ul>
+                      <li><%= link_to "Undergraduate", undergraduate_path %></li>
+                      <li><%= link_to "graduate", graduate_path%></li>
+                    </ul>
+                </li>
+                <li><%= link_to "Exchange", exchange_path, :class => is_current(exchange_path) %></li>
+                <li><%= link_to "Contacts", contacts_path, :class => is_current(contacts_path) %></li>
+                <li><%= link_to "IAAU", "http://iaau.edu.kg" %></li>
+            </ul>
+        </div>
+    </div>
+</div>

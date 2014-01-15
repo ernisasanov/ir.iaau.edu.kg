@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= @title %></title>
+        <%= stylesheet_link_tag    "application", media: "all" %>
+        <%= javascript_include_tag "application" %>
+         <script type="text/javascript">
+          $(document).ready(function() {
+              $('#slider').nivoSlider();
+          });
+        </script>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+
+        <% if (is_admin_page)%>
+            <%= yield %>
+        <% else %>
+
+            <div class='main-cont'>
+                <%= render template: 'layouts/header' %>
+
+                <div class='body-container container'>
+                    <div class='body-section'>
+                        <%= yield %>
+                    </div>
+
+                    <div class='sidebar-container'>
+                      <%= render template: 'layouts/sidebar' %>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        <%= render template: 'layouts/footer' %>
+        <% end %>
+    </body>
+</html>

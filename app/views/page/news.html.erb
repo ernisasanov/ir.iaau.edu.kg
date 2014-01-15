@@ -1,0 +1,11 @@
+<% @title="News | Internation Relations Department | IAAU" %>
+
+<% getNews(params[:id]).each do |row| %>
+<h2><%=row['title']%></h2>
+
+<p>
+  <%=row['text']%>
+</p>
+<small><i><%=row['date_']%></i></small>
+
+<%end %>

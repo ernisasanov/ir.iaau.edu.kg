@@ -1,0 +1,40 @@
+
+<div class='widget-cont'>
+    <div class='widget-title'>Downloads</div>
+    <div class='widget-content'>
+        <ul>
+          <li><%= link_to 'Undergraduate Curriculum', asset_path('/assets/2014.xlsx') %></li>
+            <li><a href='#'>Graduate Curriculum</a></li>
+            <li><a href='#'>Thesis Guide</a></li>
+            <li><a href='#'>Timetable</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class='widget-cont'>
+    <div class='widget-title'>Useful Links</div>
+    <div class='widget-content'>
+        <ul>
+            <li><%= link_to "IAAU International Center", "http://ic.iaau.edu.kg", :target => "_blank" %></li>
+            <li><%= link_to "Online Course System", "http://ocs.iaau.edu.kg", :target => "_blank" %></li>
+            <li><%= link_to "IAAU Mail", "https://www.google.com/a/iaau.edu.kg", :target => "_blank" %></li>
+            <li><%= link_to "Library", "http://178.217.168.124", :target => "_blank" %></li>
+            <li><%= link_to "Admission", "http://iaau.edu.kg/index.php?option=com_content&view=article&id=1241&Itemid=269&lang=en", :target => "_blank" %></li>
+        </ul>
+    </div>
+</div>
+
+<div class='widget-cont'>
+  <div class='widget-title'>Recent News</div>
+  <div class='widget-content'>
+    <ul>
+
+      <% counter = 0;
+         getAllNews.each do |row|  counter+=1
+         if counter <= 15  %>
+              <li><a href='/news/<%=row['id']%>'><%=row['title']%></a></li>
+          <%end %>
+      <%end %>
+    </ul>
+  </div>
+</div>

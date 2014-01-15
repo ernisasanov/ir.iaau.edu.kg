@@ -1,0 +1,26 @@
+<%
+   message = "";
+   if (!login() && params[:type] == "login")
+    message = 'Login failed';
+   elsif (params[:param] == "logout")
+     logout
+   end
+
+   if (params[:type] == "edit_news")
+        EditNews(params[:title], params[:text], params[:id])
+   elsif (params[:type] == "add_news")
+        AddNews(params[:title], params[:text])
+   end
+
+   if (params[:value] == "delete")
+    deleteNews(params[:operation])
+   end
+%>
+
+<div class="admin-cont">
+    <%= render template: 'admin/login' %>
+  <span class="error"><%=message%></span>
+    <%if (loggen_in)%>
+        <%= render template: 'admin/admin' %>
+    <%end%>
+</div>

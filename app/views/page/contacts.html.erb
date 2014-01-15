@@ -1,0 +1,43 @@
+<% @title="Contacts | Internation Relations Department | IAAU" %>
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+    function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var myLatlng = new google.maps.LatLng(42.855908,74.680874);
+        var map_options = {
+            center: myLatlng,
+            zoom: 16,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(map_canvas, map_options);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            icon: '<%= asset_path( 'marker.png' ) %>'
+        });
+
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+<h4>Address</h4>
+<p>
+
+    International Ataturk Alatoo University,<br>
+    Ankara Street 1/8, Tunguch, 720048, <br>
+    Bishkek, Kyrgyz Republic<br><br>
+
+    <b>Tel:</b> +996 (312) 631425<br>
+
+    <b>Fax:</b> +996(312) 630409<br>
+
+    <b>E-mail:</b> info@iaau.edu.kg<br><br>
+
+
+    Buses: 7, 29, 102, 105, 128, 137, 147, 154, 166, 258, 262
+</p>
+
+<div id="map_canvas"></div>

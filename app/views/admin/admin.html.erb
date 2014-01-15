@@ -1,0 +1,45 @@
+
+
+<div class="admin-content">
+    <%if params[:param] == "news" %>
+        <a href='/admin/news/add/' class="add-news-btn">ADD</a>
+
+        <div class="admin-news-list">
+            <ul>
+              <% getAllNews.each do |row| %>
+                  <li><a href='/admin/news/<%=row['id']%>'><%=row['title']%></a><a class="delete-btn" href='/admin/news/delete/<%=row['id']%>'>Delete</a></li>
+              <%end %>
+            </ul>
+          <div class="clear"></div>
+        </div>
+    <%end %>
+
+    <%if params[:param] == "news" && params[:value] != nil %>
+        <div class="admin-news-add">
+            <% getNews(params[:value].to_i).each do |news| %>
+                  <%= form_tag("/admin/news", method: "get", class: "add-news") do %>
+                      <%= hidden_field_tag(:type, "edit_news") %>
+                      <%= hidden_field_tag(:id, "#{news['id']}") %>
+                      <%= label_tag(:q, "Title:") %>
+                      <%= text_field_tag(:title, "#{news['title']}" ) %><br>
+                      <%= text_area_tag(:text, "#{news['text']}") %><br>
+                      <%= submit_tag("Edit") %>
+                  <% end %>
+             <%end %>
+            <div class="clear"></div>
+        </div>
+    <%end %>
+
+    <%if params[:param] == "news" && params[:value] == "add" %>
+        <div class="admin-news-add">
+          <%= form_tag("/admin/news", method: "get", class: "add-news") do %>
+              <%= hidden_field_tag(:type, "add_news") %>
+              <%= label_tag(:q, "Title:") %>
+              <%= text_field_tag(:title ) %><br>
+              <%= text_area_tag(:text) %><br>
+              <%= submit_tag("Add") %>
+          <% end %>
+          <div class="clear"></div>
+        </div>
+    <%end %>
+</div>
